@@ -1,0 +1,33 @@
+# Site settings
+url: "https://hacker.bio"
+domain: hacker.bio
+
+title: Hacker Bio
+description: >
+  An exploration into the daily lives of Software Developers, Hardware Tinkers, Engineers and Technologists to better understand the culture, mindset and motivation of this generation.
+
+author:
+  name: Ahmad Nassri
+  link: https://www.ahmadnassri.com/about
+  facebook_id: 227304446
+
+social:
+  email: info@hacker.bio
+  twitter: TheHackerBio
+  youtube: https://www.youtube.com/channel/UChKvchmAvT6mThad--aztvg
+
+# Build settings
+markdown: kramdown
+timezone: America/Toronto
+permalink: pretty
+
+collections:
+  episodes:
+    output: true
+    permalink: /:collection/:title/
+
+defaults:
+  - scope:
+      type: episodes
+    values:
+      layout: episode

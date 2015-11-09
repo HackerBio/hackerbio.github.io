@@ -1,0 +1,76 @@
+.row {
+  .episode {
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .thumb {
+      display: block;
+      border-bottom: 3px solid #F5F5F5;
+      transition: border-color .4s ease-in-out;
+      position: relative;
+
+      &:before {
+        content: '';
+
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        background-color: rgba(255,255,255,.7);
+        background-image: url("https://www.youtube.com/yt/brand/media/image/YouTube-icon-full_color.png");
+        background-repeat: no-repeat;
+        background-size: 75px;
+        background-position: 50% 50%;
+
+        opacity: 0;
+
+        transition: opacity .4s ease-in-out;
+      }
+
+      img {
+        display: block;
+
+        &[src*="banner"] {
+          filter: grayscale(1);
+        }
+      }
+    }
+
+    p {
+      color: #8D8D8D;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 23px;
+
+      min-height: 150px;
+
+      time {
+        font-weight: 500;
+
+        &:after {
+          content: " \2014";
+        }
+      }
+    }
+
+    &:hover {
+      .thumb {
+
+        &:before {
+          opacity: 1;
+        }
+
+        border-color: $dark-blue;
+      }
+    }
+  }
+}

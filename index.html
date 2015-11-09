@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<div class="page home">
+  <div id="intro">
+    <h1>Are you <span></span></h1>
+
+    <p class="description">{{ site.description }}</p>
+  </div>
+
+  <header id="episodes">
+    <h2>Episodes</h2>
+  </header>
+
+  {% include episodes.html %}
+
+  <header id="episodes">
+    <h2>About</h2>
+  </header>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+
+<script>
+  $(function() {
+    $('h1 span').typed({
+      strings: [
+        'a Hacker?',
+        'a Developer?',
+        'an Engineer?',
+        'a Technologist?',
+        'a Programmer?',
+        'a Leader?',
+        'a Designer?',
+        'an Architect?',
+        'a Student?'
+      ],
+
+      typeSpeed: 100,
+      backSpeed: 50,
+      backDelay: 1000,
+      loop: false,
+      cursorChar: '_'
+    })
+  })
+</script>

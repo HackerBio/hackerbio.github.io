@@ -12,24 +12,17 @@ layout: null
 
     <title>{{ site.meta.title | xml_escape }}</title>
     <description>{{ site.meta.description | xml_escape }}</description>
-
-    {% for post in site.posts limit: 100 %}
+    
+    {% assign episodes = site.episodes | sort: 'date' %}
+    {% for episode in episodes limit: 20 %}
       <item>
-        <guid isPermaLink="true">{{ post.url | prepend: site.url }}</guid>
+        <guid isPermaLink="true">{{ episode.url | prepend: site.url }}</guid>
 
-        <link>{{ post.url | prepend: site.url }}</link>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+        <link>{{ episode.url | prepend: site.url }}</link>
+        <pubDate>{{ episode.date | date_to_rfc822 }}</pubDate>
 
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-
-        {% for tag in post.tags %}
-          <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-
-        {% for cat in post.categories %}
-          <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
+        <title>{{ episode.title | xml_escape }}</title>
+        <description>{{ episode.description | xml_escape }}</description>
       </item>
     {% endfor %}
   </channel>

@@ -12,7 +12,7 @@
 
       <h3><a href="{{ episode.url }}">{{ episode.title }}</a></h3>
 
-      <p><time>{{ episode.date | date: "%b %-d, %Y" }}</time> {{ episode.description }}</p>
+      <p><time pubdate datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ episode.date | date: "%b %-d, %Y" }}</time> {{ episode.description }}</p>
     </div>
   {% endfor %}
 

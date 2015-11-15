@@ -1,11 +1,12 @@
 ---
+layout: default
 target: https://www.patreon.com/hackerbio
 ---
-<!DOCTYPE html>
-<meta charset="utf-8">
-<title>Redirecting...</title>
-<link rel="canonical" href="{{ page.target }}">
 <meta http-equiv="refresh" content="0; url={{ page.target }}">
-<h1>Redirecting...</h1>
-<a href="{{ page.target }}">Click here if you are not redirected.</a>
-<script>location="{{ page.target }}"</script>
+<center>
+  <h2>Redirecting ...</h2>
+  <p><a href="{{ page.target }}">Click here if you are not redirected.</a></p>
+</center>
+
+<script>window.location = '{{ page.target }}'</script>
+

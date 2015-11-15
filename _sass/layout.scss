@@ -1,7 +1,18 @@
+html, body, body > section {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
 body {
-  padding-top: 100px;
-  padding-bottom: 100px;
   font-family: 'Raleway', sans-serif;
+
+  section {
+    padding-top: 100px;
+    padding-bottom: 70px;
+  }
 }
 
 h1 {
@@ -10,10 +21,4 @@ h1 {
 
 img {
   max-width: 100%;
-}
-
-// temporary since pages.scss not selecting
-.page.survey {
-    margin-right: -15px;
-    margin-left: -15px;
 }

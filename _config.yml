@@ -19,7 +19,6 @@ social:
 # Build settings
 markdown: kramdown
 timezone: America/Toronto
-permalink: pretty
 
 collections:
   episodes:

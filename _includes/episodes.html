@@ -1,0 +1,30 @@
+<div class="row">
+  {% assign episodes = site.episodes | sort: 'date' %}
+  {% for episode in episodes limit: 2 %}
+    <div class="episode col-sm-6">
+      <a class="thumb" href="{{ episode.url }}">
+        {% if episode.youtube %}
+          <img src="http://img.youtube.com/vi/{{ episode.youtube }}/maxresdefault.jpg"/>
+        {% else %}
+          <img src="/images/banner.jpg"/>
+        {% endif %}
+      </a>
+
+      <h3><a href="{{ episode.url }}">{{ episode.title }}</a></h3>
+
+      <p><time pubdate datetime="{{ episode.date | date: '%Y-%m-%d' }}">{{ episode.date | date: "%b %-d, %Y" }}</time> {{ episode.description }}</p>
+    </div>
+  {% endfor %}
+
+  {% for i in (1..3) %}
+    <div class="episode col-sm-4">
+      <a class="thumb" href="#">
+        <img src="/images/banner.jpg"/>
+      </a>
+
+      <h3><a href="#">Coming Soon</a></h3>
+
+      <p></p>
+    </div>
+  {% endfor %}
+</div>

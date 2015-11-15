@@ -1,0 +1,29 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <link>{{ site.url }}/</link>
+    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+
+    <title>{{ site.meta.title | xml_escape }}</title>
+    <description>{{ site.meta.description | xml_escape }}</description>
+
+    {% assign episodes = site.episodes | sort: 'date' %}
+    {% for episode in episodes limit: 20 %}
+      <item>
+        <guid isPermaLink="true">{{ episode.url | prepend: site.url }}</guid>
+
+        <link>{{ episode.url | prepend: site.url }}</link>
+        <pubDate>{{ episode.date | date: '%Y-%m-%d' }}</pubDate>
+
+        <title>{{ episode.title | xml_escape }}</title>
+        <description>{{ episode.description | xml_escape }}</description>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>

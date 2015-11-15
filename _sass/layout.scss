@@ -11,3 +11,8 @@ h1 {
 img {
   max-width: 100%;
 }
+
+// temporary since pages.scss not selecting
+.page.survey {
+    margin-right: -15px;
+}

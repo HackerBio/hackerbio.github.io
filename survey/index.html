@@ -1,4 +1,16 @@
 ---
+target: http://goo.gl/forms/27vpu5vRFf
+---
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Redirecting...</title>
+<link rel="canonical" href="{{ page.target }}">
+<meta http-equiv="refresh" content="0; url={{ page.target }}">
+<h1>Redirecting...</h1>
+<a href="{{ page.target }}">Click here if you are not redirected.</a>
+<script>location="{{ page.target }}"</script>
+<!--
+---
 layout: default
 ---
 <div class="page survey">
@@ -16,3 +28,4 @@ layout: default
   document.addEventListener('DOMContentLoaded', resizeFunc)
   window.onresize = resizeFunc
 </script>
+-->

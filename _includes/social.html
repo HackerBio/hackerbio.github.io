@@ -1,17 +1,17 @@
 {% capture title %}{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}{% endcapture %}
 {% capture description %}{% if page.headline %}{{ page.headline | markdownify | strip_html }} | {% else %}{{ site.description }}{% endif %}{% endcapture %}
-{% capture image %}{% if page.layout == 'hacker' %}hackers/{{ page.slug }}.jpg{% else %}banner.png{% endif %}?time={{ site.time | date_to_xmlschema }}{% endcapture %}
+{% capture image %}{% if page.layout == 'hacker' %}hackers/{{ page.slug }}/photo.jpg{% else %}assets/images/banner.png{% endif %}?time={{ site.time | date_to_xmlschema }}{% endcapture %}
 
 <title>{{ title }}</title>
 
 <!-- SEO -->
 <meta name="description" content="{{ description }}"/>
-<meta name="image" content="{{ site.url }}/assets/images/{{ image }}"/>
+<meta name="image" content="{{ site.url }}/{{ image }}"/>
 
 <!-- Schema.org for Google -->
 <meta itemprop="name" content="{{ title }}"/>
 <meta itemprop="description" content="{{ description }}"/>
-<meta itemprop="image" content="{{ site.url }}/assets/images/{{ image }}"/>
+<meta itemprop="image" content="{{ site.url }}/{{ image }}"/>
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image"/>
@@ -19,12 +19,12 @@
 <meta name="twitter:description" content="{{ description }}"/>
 <meta name="twitter:site" content="@TheHackerBio"/>
 <meta name="twitter:creator" content="@ahmadnassri"/>
-<meta name="twitter:image" content="{{ site.url }}/assets/images/{{ image }}"/>
+<meta name="twitter:image" content="{{ site.url }}/{{ image }}"/>
 
 <!-- Open Graph general (Facebook, Pinterest & Google+) -->
 <meta property="og:title" content="{{ title }}"/>
 <meta property="og:description" content="{{ description }}"/>
-<meta property="og:image" content="{{ site.url }}/assets/images/{{ image }}"/>
+<meta property="og:image" content="{{ site.url }}/{{ image }}"/>
 <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
 <meta property="og:site_name" content="{{ site.title }}"/>
 <meta property="fb:admins" content="227304446"/>

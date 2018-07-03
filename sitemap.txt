@@ -1,7 +1,9 @@
 ---
 layout: null
+pages:
+  - /
 ---
-{% for page in site.pages %}{{ page.url | prepend: site.url }}
+{% for page in page.pages %}{{ page | prepend: site.url }}
 {% endfor %}
-{% for post in site.posts %}{{ post.url | prepend: site.url }}
+{% for hacker in site.hackers %}{{ hacker.url | prepend: site.url }}
 {% endfor %}

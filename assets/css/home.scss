@@ -1,0 +1,88 @@
+---
+---
+
+@import url('base.css');
+
+h1 {
+  font-weight: 300;
+}
+
+article {
+  .wrapper {
+    position: relative;
+
+    .photo {
+      transition: transform 0.5s ease;
+
+      border-radius: 5px;
+      overflow: hidden;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        transition: background-color 0.5s ease, opacity 0.5s ease;
+        border-radius: 5px;
+      }
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+
+    h2 {
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .content {
+      max-height: 0;
+      opacity: 0;
+
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+    }
+  }
+
+  &:nth-child(1n+1) .photo:before { background-color: #f2849e; }
+
+  &:nth-child(2n+1) .photo:before { background-color: #7ecaf6; }
+
+  &:nth-child(3n+1) .photo:before { background-color: #7bd0c1; }
+
+  &:nth-child(4n+1) .photo:before { background-color: #c75b9b; }
+
+  &:nth-child(5n+1) .photo:before { background-color: #ae85ca; }
+
+  &:nth-child(6n+1) .photo:before { background-color: #8499e7; }
+
+  &:hover {
+    .photo {
+      transform: scale(1.1);
+
+      &:before {
+        background-color: #333333;
+        opacity: 0.35;
+      }
+    }
+
+    .content {
+      max-height: 15em;
+      opacity: 1;
+    }
+  }
+}

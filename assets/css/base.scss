@@ -1,0 +1,66 @@
+---
+---
+
+:root {
+  --color-light: #fcd807;
+  --color-dark: #e6bb21;
+}
+
+@charset "utf-8";
+
+@import url('https://unpkg.com/bootstrap@4.1.1/dist/css/bootstrap.min.css');
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900");
+
+html{
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+body {
+  color: #585858;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+
+header {
+  img {
+    height: 3em;
+  }
+
+  .bg-light {
+    background-color: transparent !important;
+  }
+}
+
+footer {
+  background-color: #f6f6f6;
+}
+
+.btn-warning {
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  margin-right: 1em;
+
+  color: white;
+  background-color: var(--color-dark);
+  border-color: var(--color-dark);
+  // border-width: 1.5px;
+}
+
+.btn-warning:hover {
+    color: #fff;
+    background-color: var(--color-light);
+    border-color: var(--color-light);
+}
+
+.btn-warning:active {
+    // color: #fff;
+    background-color: var(--color-light) !important;
+    border-color: var(--color-light) !important;
+}
+
+.btn-warning:focus {
+  box-shadow: none !important;
+}

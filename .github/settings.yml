@@ -1,0 +1,14 @@
+repository:
+  name: website
+  description: An exploration into the daily lives of Software Developers, Hardware Tinkers, Engineers and Technologists to better understand the culture, mindset and motivation of this generation.
+  topics: podcast, website, jekyll
+  homepage: https://hacker.bio
+  private: false
+  has_issues: false
+  has_wiki: false
+  has_downloads: false
+  has_projects: false
+  default_branch: master
+  allow_squash_merge: true
+  allow_merge_commit: false
+  allow_rebase_merge: true

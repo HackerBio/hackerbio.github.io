@@ -10,19 +10,19 @@ layout: null
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
 
-    <title>{{ site.meta.title | xml_escape }}</title>
-    <description>{{ site.meta.description | xml_escape }}</description>
+    <title>{{ site.title | xml_escape }}</title>
+    <description>{{ site.description | xml_escape }}</description>
 
-    {% assign episodes = site.episodes | sort: 'date' %}
-    {% for episode in episodes limit: 20 %}
+    {% assign hackers = site.hackers | sort: 'date' %}
+    {% for hacker in hackers limit: 20 %}
       <item>
-        <guid isPermaLink="true">{{ episode.url | prepend: site.url }}</guid>
+        <guid isPermaLink="true">{{ hacker.url | prepend: site.url }}</guid>
 
-        <link>{{ episode.url | prepend: site.url }}</link>
-        <pubDate>{{ episode.date | date: '%Y-%m-%d' }}</pubDate>
+        <link>{{ hacker.url | prepend: site.url }}</link>
+        <pubDate>{{ hacker.date | date: '%Y-%m-%d' }}</pubDate>
 
-        <title>{{ episode.title | xml_escape }}</title>
-        <description>{{ episode.description | xml_escape }}</description>
+        <title>{{ hacker.title | xml_escape }}</title>
+        <description>{{ hacker.content | xml_escape }}</description>
       </item>
     {% endfor %}
   </channel>

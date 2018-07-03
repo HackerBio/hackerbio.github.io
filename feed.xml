@@ -36,7 +36,7 @@ layout: null
     <itunes:summary>{{ site.description }}</itunes:summary>
     <itunes:subtitle>{{ site.subtitle }}</itunes:subtitle>
 
-    {% assign hackers = site.hackers | where_exp: "item", "item.media" | sort: 'date' %}
+    {% assign hackers = site.hackers | sort: 'date' %}
     {% for hacker in hackers %}
       <item>
         <guid isPermaLink="true">{{ hacker.url | prepend: site.url }}</guid>

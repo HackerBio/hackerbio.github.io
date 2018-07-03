@@ -1,0 +1,32 @@
+<title>{{ title }}</title>
+
+<!-- SEO -->
+<meta name="description" content="{{ description }}"/>
+<meta name="image" content="{{ site.url }}/images/banner.png?time={{ site.time | date_to_xmlschema }}"/>
+
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="{{ title }}"/>
+<meta itemprop="description" content="{{ description }}"/>
+<meta itemprop="image" content="{{ site.url }}/images/banner.png?time={{ site.time | date_to_xmlschema }}"/>
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="{{ title }}"/>
+<meta name="twitter:description" content="{{ description }}"/>
+<meta name="twitter:site" content="{{ page.twitter | default: '@FunctionsConf' }}"/>
+<meta name="twitter:creator" content="@ahmadnassri"/>
+<meta name="twitter:image" content="{{ site.url }}/images/twitter.png?time={{ site.time | date_to_xmlschema }}"/>
+
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta property="og:title" content="{{ title }}"/>
+<meta property="og:description" content="{{ description }}"/>
+<meta property="og:image" content="{{ site.url }}/images/open-graph.png?time={{ site.time | date_to_xmlschema }}"/>
+<meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
+<meta property="og:site_name" content="{{ site.title }}"/>
+<meta property="fb:admins" content="227304446"/>
+<meta property="og:type" content="website"/>
+
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+<script type="application/ld+json">
+</script>

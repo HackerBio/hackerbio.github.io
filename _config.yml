@@ -1,32 +1,26 @@
-# Site settings
-url: "https://hacker.bio"
-domain: hacker.bio
+title: Hacker:Bio
+description: An exploration into the daily lives of Software Developers, Hardware Tinkers, Engineers and Technologists to better understand the culture, mindset and motivation of this generation.
 
-title: Hacker Bio
-description: >
-  An exploration into the daily lives of Software Developers, Hardware Tinkers, Engineers and Technologists to better understand the culture, mindset and motivation of this generation.
+url: https://hacker.bio
 
-author:
-  name: Ahmad Nassri
-  link: https://www.ahmadnassri.com/about
-  facebook_id: 227304446
+future: true
 
-social:
-  email: info@hacker.bio
-  twitter: TheHackerBio
-  youtube: https://www.youtube.com/channel/UChKvchmAvT6mThad--aztvg
-
-# Build settings
-markdown: kramdown
-timezone: America/Toronto
+exclude:
+  - ssl
+  - Dockerfile
+  - docker-compose.yml
 
 collections:
-  episodes:
+  hackers:
     output: true
     permalink: /:collection/:title/
 
 defaults:
   - scope:
-      type: episodes
+      type: hackers
     values:
-      layout: episode
+      layout: hacker
+
+plugins:
+  - jekyll-redirect-from
+  - jekyll-sitemap

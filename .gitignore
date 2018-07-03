@@ -1,3 +1,5 @@
+ssl/root.*
+ssl/localhost.*
 _site
 .sass-cache
-.DS_Store
+.jekyll-metadata

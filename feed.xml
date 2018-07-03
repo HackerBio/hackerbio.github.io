@@ -34,7 +34,7 @@ layout: null
     <itunes:image href="{{ site.url }}/assets/images/logo-square.png"/>
     <itunes:author>TechMasters Community</itunes:author>
     <itunes:summary>{{ site.description }}</itunes:summary>
-    <itunes:subtitle></itunes:subtitle>
+    <itunes:subtitle>{{ site.subtitle }}</itunes:subtitle>
 
     {% assign hackers = site.hackers | where_exp: "item", "item.media" | sort: 'date' %}
     {% for hacker in hackers %}

@@ -7,3 +7,9 @@ layout: base
   <div class="my-5"><img src="/hackers/{{ page.slug }}/photo.jpg" alt="{{ page.name }}"/></div>
   <div class="lead">{{ content }}</div>
 </section>
+
+{% if page.media %}
+
+{% else %}
+  <a href="{{ page.crowdcast }}" class="btn btn-lg btn-warning">Register for the live show</a>
+{% endif %}

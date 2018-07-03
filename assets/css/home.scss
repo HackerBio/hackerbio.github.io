@@ -51,9 +51,6 @@ article {
     }
 
     .content {
-      max-height: 0;
-      opacity: 0;
-
       transition: max-height 0.5s ease, opacity 0.5s ease;
     }
   }
@@ -70,19 +67,27 @@ article {
 
   &:nth-child(6n+1) .photo:before { background-color: #8499e7; }
 
-  &:hover {
-    .photo {
-      transform: scale(1.1);
 
-      &:before {
-        background-color: #333333;
-        opacity: 0.35;
-      }
+  @media (min-width: 768px) {
+    .content {
+      max-height: 0;
+      opacity: 0;
     }
 
-    .content {
-      max-height: 15em;
-      opacity: 1;
+    &:hover {
+      .photo {
+        transform: scale(1.1);
+
+        &:before {
+          background-color: #333333;
+          opacity: 0.6;
+        }
+      }
+
+      .content {
+        max-height: 15em;
+        opacity: 1;
+      }
     }
   }
 }

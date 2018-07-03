@@ -3,7 +3,7 @@ layout: base
 ---
 
 <section class="my-5">
-  <header class="d-flex flex-space-between align-items-center justify-content-between">
+  <header class="d-flex flex-space-between align-items-end justify-content-between">
     <h1>{{ page.name }}</h1>
     <h5><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }} @ {{ page.date | date: '%I:%M %p' }} EST</time></h5>
   </header>

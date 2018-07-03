@@ -2,16 +2,39 @@
 layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:itunesu="http://www.itunesu.com/feed">
   <channel>
     <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml"/>
 
-    <link>{{ site.url }}/</link>
+    <language>en-us</language>
+    <copyright>&#xA9; {{ site.title }} {{ site.time | date: "%Y" }}</copyright>
+    <webMaster>ahmad@hacker.bio (Ahmad Nassri)</webMaster>
+    <managingEditor>ahmad@hacker.bio (Ahmad Nassri)</managingEditor>
+
+    <image>
+      <url>{{ site.url }}/assets/images/logo-square.png</url>
+      <title>{{ site.title }}</title>
+      <link>{{ site.url }}</link>
+    </image>
+
+    <link>{{ site.url }}</link>
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
 
     <title>{{ site.title | xml_escape }}</title>
     <description>{{ site.description | xml_escape }}</description>
+
+    <itunes:owner>
+      <itunes:name>Ahmad Nassri</itunes:name>
+      <itunes:email>ahmad@hacker.bio</itunes:email>
+    </itunes:owner>
+    <itunes:category text="Technology"/>
+    <itunes:keywords>bio, Developers, Engineers, Technologists, Programmers, Leaders, Designers, Architects, Students, Hackers</itunes:keywords>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:image href="{{ site.url }}/assets/images/logo-square.png"/>
+    <itunes:author>TechMasters Community</itunes:author>
+    <itunes:summary>{{ site.description }}</itunes:summary>
+    <itunes:subtitle></itunes:subtitle>
 
     {% assign hackers = site.hackers | sort: 'date' %}
     {% for hacker in hackers limit: 20 %}
@@ -23,6 +46,13 @@ layout: null
 
         <title>{{ hacker.title | xml_escape }}</title>
         <description>{{ hacker.content | xml_escape }}</description>
+
+        <enclosure url="{{ site.url }}/assets/hackers/{{ hacker.slug }}/audio.mp3" type="audio/mpeg" length="1"/>
+
+        <itunes:summary>Duplicate of above verbose description.</itunes:summary>
+        <itunes:subtitle>Short description of the episode - 255 character max.</itunes:subtitle>
+        <itunesu:category itunesu:code="112106"/>
+        <itunes:duration>H:MM:SS</itunes:duration>
       </item>
     {% endfor %}
   </channel>

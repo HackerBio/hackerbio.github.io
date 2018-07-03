@@ -3,6 +3,8 @@ description: An exploration into the daily lives of Software Developers, Hardwar
 
 url: https://hacker.bio
 
+timezone: America/Toronto
+
 future: true
 
 exclude:

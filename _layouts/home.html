@@ -13,7 +13,7 @@ layout: base
 
         <a class="d-flex flex-column align-items-center justify-content-center text-center flex-grow-1" href="{{ hacker.url }}">
           <h2>{{ hacker.name }}</h2>
-          <div class="content">{{ hacker.headline | markdownify  }}</div>
+          <div class="content">{{ hacker.headline | markdownify  }}<time datetime="{{ hacker.date | date_to_xmlschema }}">{{ hacker.date | date_to_long_string }}</time></div>
         </a>
       </div>
     </article>
@@ -24,7 +24,7 @@ layout: base
       <div class="photo"><img src="/assets/images/nominate.jpg" alt="Nominate"/></div>
 
       <a class="d-flex flex-column align-items-center justify-content-center text-center flex-grow-1" href="#">
-        <h2>Nominate!</h2>
+        <h2>Nominate our next guest!</h2>
         <div class="content">Who do you think we should interview next? Tweet us with suggestions</div>
       </a>
     </div>

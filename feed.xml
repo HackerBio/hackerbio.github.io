@@ -36,7 +36,7 @@ layout: null
     <itunes:summary>{{ site.description }}</itunes:summary>
     <itunes:subtitle>{{ site.subtitle }}</itunes:subtitle>
 
-    {% assign hackers = site.hackers | sort: 'date' %}
+    {% assign hackers = site.hackers | where_exp: "item", "item.media" | sort: 'date' %}
     {% for hacker in hackers %}
       <item>
         <guid isPermaLink="true">{{ hacker.url | prepend: site.url }}</guid>
@@ -47,12 +47,12 @@ layout: null
         <title>{{ hacker.title | xml_escape }}</title>
         <description>{{ hacker.content | xml_escape }}</description>
 
-        <enclosure url="{{ site.url }}/assets/hackers/{{ hacker.slug }}/audio.mp3" type="audio/mpeg" length="1"/>
+        <enclosure url="{{ site.url }}/hackers/{{ hacker.slug }}/audio.mp3" type="audio/mpeg" length="1"/>
 
-        <itunes:summary>Duplicate of above verbose description.</itunes:summary>
-        <itunes:subtitle>Short description of the episode - 255 character max.</itunes:subtitle>
+        <itunes:summary>{{ hacker.content | markdownify | strip_html | xml_escape }}</itunes:summary>
+        <itunes:subtitle>{{ hacker.headline | markdownify | strip_html | xml_escape }}</itunes:subtitle>
         <itunesu:category itunesu:code="112106"/>
-        <itunes:duration>H:MM:SS</itunes:duration>
+        <!-- <itunes:duration>H:MM:SS</itunes:duration> -->
       </item>
     {% endfor %}
   </channel>

@@ -1,10 +1,28 @@
 <footer>
-  <div class="container my-4">
-    <a class="btn btn-warning" href="/feed.xml"><i class="fas fa-rss"></i></a>
-    <a class="btn btn-warning" href="https://twitter.com/thehackerbio"><i class="fab fa-twitter"></i></a>
-    <!-- <a class="btn btn-warning" href="#"><i class="fas fa-podcast"></i></a> -->
-    <a class="btn btn-warning" href="https://www.youtube.com/channel/UChKvchmAvT6mThad--aztvg"><i class="fab fa-youtube"></i></a>
-    <a class="btn btn-warning" href="#"><i class="fab fa-itunes-note"></i></a>
-    <a class="btn btn-warning" href="#"><i class="fab fa-google-play"></i></a>
+  <div class="container my-4 d-flex align-items-center justify-content-between">
+    <div>
+      <a href="#comingsoon"><img src="/assets/images/badges/google-podcasts.svg"/></a>
+      <a href="#comingsoon"><img src="/assets/images/badges/apple-podcasts.svg"/></a>
+    </div>
+
+    <div>
+      <a class="btn btn-warning" href="/feed.xml"><i class="fas fa-rss"></i></a>
+      <a class="btn btn-warning" href="https://twitter.com/thehackerbio"><i class="fab fa-twitter"></i></a>
+      <!-- <a class="btn btn-warning" href="#"><i class="fas fa-podcast"></i></a> -->
+      <a class="btn btn-warning" href="https://www.youtube.com/channel/UChKvchmAvT6mThad--aztvg"><i class="fab fa-youtube"></i></a>
+      <!-- <a class="btn btn-warning" href="#"><i class="fab fa-itunes-note"></i></a>
+      <a class="btn btn-warning" href="#"><i class="fab fa-google-play"></i></a> -->
+    </div>
   </div>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href="#comingsoon"]').forEach(a => {
+      a.addEventListener('click', event => {
+        event.preventDefault()
+        alert('Coming Soon!\nPending Google & Apple publishing approvals! 🤷')
+      })
+    })
+  })
+</script>

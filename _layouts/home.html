@@ -19,7 +19,7 @@ layout: base
     </article>
   {% endfor %}
 
-  <article class="col-12 col-md-6 mb-5">
+  <article class="nominate col-12 col-md-6 mb-5">
     <div class="wrapper d-flex flex-column justify-content-center">
       <div class="photo"><img src="/assets/images/nominate.jpg" alt="Nominate"/></div>
 
@@ -57,4 +57,8 @@ layout: base
   for (var i = hackers.children.length; i >= 0; i--) {
     hackers.appendChild(hackers.children[Math.random() * i | 0])
   }
+  
+  // keep nominate tile last
+  hackers.appendChild(hackers.querySelector('.nominate'))
+<article class=​"col-12 col-md-6 mb-5 nominate">​…​</article>​
 </script>

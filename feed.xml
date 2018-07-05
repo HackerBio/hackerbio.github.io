@@ -68,8 +68,8 @@ layout: null
           <!-- <media:content url="{{ media }}/audio.mp4?raw=true" type="video/mp4" medium="video" expression="full" isDefault="true"/> -->
         </media:group>
 
-        <enclosure url="{{ media }}/audio.mp3?raw=true" type="audio/mpeg" length="1"/>
-        <!-- <enclosure url="{{ media }}/video.mp4?raw=true" type="video/mp4" length="1"/> -->
+        <enclosure url="{{ media }}/audio.mp3?raw=true" type="audio/mpeg"/>
+        <!-- <enclosure url="{{ media }}/video.mp4?raw=true" type="video/mp4"/> -->
       </item>
     {% endfor %}
   </channel>

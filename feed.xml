@@ -73,7 +73,7 @@ layout: null
 
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:subtitle>{{ headline }}</itunes:subtitle>
-      <itunes:summary><![CDATA[{{ html }}]]></itunes:summary>
+      <itunes:summary>{{ description }}</itunes:summary>
       <itunes:duration>{{ hacker.media.audio.duration }}</itunes:duration>
       <itunes:image href="{{ image }}"/>
 

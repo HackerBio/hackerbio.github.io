@@ -3,20 +3,48 @@ layout: base
 ---
 
 <section class="my-5">
-  <header class="d-flex flex-space-between align-items-end justify-content-between">
+  <header class="d-md-flex flex-space-between align-items-center justify-content-between">
     <h1>{{ page.name }}</h1>
     <h5><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }} @ {{ page.date | date: '%I:%M %p' }} EST</time></h5>
   </header>
-  <div class="my-5"><img src="/hackers/{{ page.slug }}/photo.jpg" alt="{{ page.name }}"/></div>
+
+
+  <div class="my-5 photo">
+    <img src="/hackers/{{ page.slug }}/photo.jpg" alt="{{ page.name }}"/>
+
+    {% if page.media.audio.duration %}
+      <div class="player">
+        <audio crossorigin playsinline>
+          <source src="https://media.githubusercontent.com/media/HackerBio/website/master/hackers/{{ page.slug }}/audio.mp3?raw=true" type="audio/mp3">
+        </audio>
+      </div>
+    {% endif %}
+  </div>
   <div class="lead">{{ content }}</div>
 </section>
 
-{% if page.media %}
+{% if page.media.youtube %}
+  <audio crossorigin playsinline>
+    <source src="https://media.githubusercontent.com/media/HackerBio/website/master/hackers/{{ page.slug }}/audio.mp3?raw=true" type="audio/mp3">
+  </audio>
 
+  <h2 class="my-5">Watch Recording</h2>
+
+  <div id="youtube" class="plyr__video-embed" data-plyr-provider="youtube" data-plyr-embed-id="{{ page.media.youtube }}">
+    <iframe src="https://www.youtube.com/embed/{{ page.media.youtube }}?origin=https://{{ site.url }}&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe>
+  </div>
 {% elsif page.crowdcast %}
-  <a href="#crowdcast" class="btn btn-lg btn-block btn-warning">Live show on Crowdcast</a>
+  <h2 class="my-5">Watch Live Stream</h2>
+
+  <iframe id="crowdcast" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" allowtransparency="true" src="{{ page.crowdcast }}?navlinks=false&embed=true" style="border: 1px solid #EEE;border-radius:3px;" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" allow="microphone; camera;"></iframe>
 {% endif %}
 
-{% if page.crowdcast %}
-  <iframe id="crowdcast" class="my-5" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" allowtransparency="true" src="{{ page.crowdcast }}?navlinks=false&embed=true" style="border: 1px solid #EEE;border-radius:3px;" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" allow="microphone; camera;"></iframe>
-{% endif %}
+
+<script src="https://unpkg.com/plyr@latest/dist/plyr.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const publisherId = 891530901789062
+    window.audio = new Plyr('audio', { enabled: true, publisherId });
+    window.youtube = new Plyr('#youtube', { enabled: true, publisherId });
+  })
+</script>

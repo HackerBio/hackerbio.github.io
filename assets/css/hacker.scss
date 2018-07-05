@@ -1,15 +1,27 @@
 ---
 ---
 
+@import url('https://unpkg.com/plyr@latest/dist/plyr.css');
 @import url('/assets/css/base.css');
 
-h1 {
-  font-weight: 300;
-}
-
 main {
-  img {
-    width: 100%;
-    border-radius: 5px;
+  h1, h2 {
+    font-weight: 300;
+  }
+
+  .photo {
+    position: relative;
+
+    .plyr__controls {
+      position: absolute;
+      width: 100%;
+      bottom: 0px;
+      background-color: rgba(255, 255, 255, .9) !important;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
   }
 }

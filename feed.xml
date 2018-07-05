@@ -2,7 +2,7 @@
 layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml"/>
     <link>{{ site.url }}</link>
@@ -37,21 +37,38 @@ layout: null
 
     {% assign hackers = site.hackers | where_exp: "item", "item.media" | sort: 'date' %}
     {% for hacker in hackers %}
-      <item>
-        <guid isPermaLink="true">{{ hacker.url | prepend: site.url }}</guid>
+      {% assign link = hacker.url | prepend: site.url %}
+      {% assign title = hacker.title | xml_escape %}
+      {% assign headline = hacker.headline | markdownify | strip_html | xml_escape %}
+      {% assign description = hacker.content | markdownify | xml_escape %}
+      {% capture image %}{{ site.url }}/hackers/{{ hacker.slug }}/square.jpg{% endcapture %}
+      {% capture media %}https://media.githubusercontent.com/media/HackerBio/website/master/hackers/{{ hacker.slug }}{% endcapture %}
 
-        <link>{{ hacker.url | prepend: site.url }}</link>
+      <item>
+        <guid isPermaLink="true">{{ link }}</guid>
+
+        <link>{{ link }}</link>
         <pubDate>{{ hacker.date | date: '%Y-%m-%d' }}</pubDate>
 
-        <title>{{ hacker.title | xml_escape }}</title>
-        <description>{{ hacker.content | xml_escape }}</description>
+        <title>{{ title }}</title>
+        <description>{{ description }}</description>
 
+        <itunes:subtitle>{{ headline }}</itunes:subtitle>
+        <itunes:summary>{{ description }}</itunes:summary>
         <itunes:duration>{{ hacker.media.audio.duration }}</itunes:duration>
-        <itunes:summary>{{ hacker.content | markdownify | strip_html | xml_escape }}</itunes:summary>
-        <itunes:subtitle>{{ hacker.headline | markdownify | strip_html | xml_escape }}</itunes:subtitle>
-        <itunes:image href="{{ site.url }}/hackers/{{ hacker.slug }}/square.jpg"/>
+        <itunes:image href="{{ image }}"/>
 
-        <enclosure url="https://media.githubusercontent.com/media/HackerBio/website/master/hackers/{{ hacker.slug }}/audio.mp3?raw=true" type="audio/mpeg" length="1"/>
+        <media:group>
+          <media:title>{{ title }}</media:title>
+          <media:description type="html">{{ description }}</media:description>
+          <media:thumbnail url="{{ image }}" width="480" height="360"/>
+          <media:category></media:category>
+          <media:content url="{{ media }}/audio.mp3?raw=true" type="audio/mpeg" medium="audio" expression="full" isDefault="false"/>
+          <media:content url="{{ media }}/audio.mp4?raw=true" type="video/mp4" medium="video" expression="full" isDefault="true"/>
+        </media:group>
+
+        <enclosure url="{{ media }}/audio.mp3?raw=true" type="audio/mpeg" length="1"/>
+        <enclosure url="{{ media }}/video.mp4?raw=true" type="video/mp4" length="1"/>
       </item>
     {% endfor %}
   </channel>

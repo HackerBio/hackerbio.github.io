@@ -2,10 +2,16 @@
 layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:itunesu="http://www.itunesu.com/feed">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>{{ site.url }}</link>
+    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <ttl>1440</ttl>
 
+    <title>{{ site.title | xml_escape }}</title>
+    <description>{{ site.description | xml_escape }}</description>
     <language>en-us</language>
     <copyright>&#xA9; {{ site.title }} {{ site.time | date: "%Y" }}</copyright>
     <webMaster>ahmad@hacker.bio (Ahmad Nassri)</webMaster>
@@ -17,24 +23,17 @@ layout: null
       <link>{{ site.url }}</link>
     </image>
 
-    <link>{{ site.url }}</link>
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:author>Ahmad Nassri</itunes:author>
+    <itunes:subtitle>{{ site.subtitle }}</itunes:subtitle>
+    <itunes:summary>{{ site.description }}</itunes:summary>
+    <itunes:category text="Technology"/>
+    <itunes:image href="{{ site.url }}/assets/images/logo-square.png"/>
+    <itunes:keywords>bio, Developers, Engineers, Technologists, Programmers, Leaders, Designers, Architects, Students, Hackers</itunes:keywords>
     <itunes:owner>
       <itunes:name>Ahmad Nassri</itunes:name>
       <itunes:email>ahmad@hacker.bio</itunes:email>
     </itunes:owner>
-    <itunes:category text="Technology"/>
-    <itunes:keywords>bio, Developers, Engineers, Technologists, Programmers, Leaders, Designers, Architects, Students, Hackers</itunes:keywords>
-    <itunes:explicit>no</itunes:explicit>
-    <itunes:image href="{{ site.url }}/assets/images/logo-square.png"/>
-    <itunes:author>TechMasters Community</itunes:author>
-    <itunes:summary>{{ site.description }}</itunes:summary>
-    <itunes:subtitle>{{ site.subtitle }}</itunes:subtitle>
 
     {% assign hackers = site.hackers | where_exp: "item", "item.media" | sort: 'date' %}
     {% for hacker in hackers %}
@@ -47,12 +46,12 @@ layout: null
         <title>{{ hacker.title | xml_escape }}</title>
         <description>{{ hacker.content | xml_escape }}</description>
 
-        <enclosure url="https://media.githubusercontent.com/media/HackerBio/website/master/hackers/{{ hacker.slug }}/audio.mp3?raw=true" type="audio/mpeg" length="1"/>
-
+        <itunes:duration>{{ hacker.media.audio.duration }}</itunes:duration>
         <itunes:summary>{{ hacker.content | markdownify | strip_html | xml_escape }}</itunes:summary>
         <itunes:subtitle>{{ hacker.headline | markdownify | strip_html | xml_escape }}</itunes:subtitle>
-        <itunesu:category itunesu:code="112106"/>
-        <!-- <itunes:duration>H:MM:SS</itunes:duration> -->
+        <itunes:image href="{{ site.url }}/hackers/{{ hacker.slug }}/square.jpg"/>
+
+        <enclosure url="https://media.githubusercontent.com/media/HackerBio/website/master/hackers/{{ hacker.slug }}/audio.mp3?raw=true" type="audio/mpeg" length="1"/>
       </item>
     {% endfor %}
   </channel>

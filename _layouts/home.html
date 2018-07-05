@@ -5,7 +5,7 @@ layout: base
 <p class="lead my-5">{{ site.description }}</p>
 <h1 class="mb-5"><span>Hackers</span></h1>
 
-<section class="row">
+<section class="hackers row">
   {% for hacker in site.hackers %}
     <article class="col-12 col-md-6 mb-5">
       <div class="wrapper d-flex flex-column justify-content-center">
@@ -51,4 +51,10 @@ layout: base
     loop: true,
     cursorChar: '_'
   })
+</script>
+<script>
+  var hackers = document.querySelector('.hackers')
+  for (var i = hackers.children.length; i >= 0; i--) {
+    hackers.appendChild(hackers.children[Math.random() * i | 0])
+  }
 </script>

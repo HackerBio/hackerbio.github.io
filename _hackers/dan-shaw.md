@@ -3,6 +3,8 @@ name: Dan Shaw
 date: 2018-07-04 13:00:00
 headline: He has been referred to as _"The Godfather of Node.js"_ for his tireless efforts to build community and unite the needs of developers and business leaders
 crowdcast: https://www.crowdcast.io/e/hacker-bio-dan-shaw
+media:
+  youtube: _kk9AeOwCC0
 ---
 
 Dan has dedicated his career to growing the Node.js Ecosystem. he was instrumental in the formation of the Node.js Foundation, was a founding member. he served on the Node.js Foundation Board of Directors as Director and Secretary. he has been referred to as "The Godfather of Node.js" for his tireless efforts to build community and unite the needs of developers and business leaders.

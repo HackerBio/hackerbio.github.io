@@ -64,11 +64,11 @@ layout: null
           <media:thumbnail url="{{ image }}" width="480" height="360"/>
           <media:category></media:category>
           <media:content url="{{ media }}/audio.mp3?raw=true" type="audio/mpeg" medium="audio" expression="full" isDefault="false"/>
-          <media:content url="{{ media }}/audio.mp4?raw=true" type="video/mp4" medium="video" expression="full" isDefault="true"/>
+          <!-- <media:content url="{{ media }}/audio.mp4?raw=true" type="video/mp4" medium="video" expression="full" isDefault="true"/> -->
         </media:group>
 
         <enclosure url="{{ media }}/audio.mp3?raw=true" type="audio/mpeg" length="1"/>
-        <enclosure url="{{ media }}/video.mp4?raw=true" type="video/mp4" length="1"/>
+        <!-- <enclosure url="{{ media }}/video.mp4?raw=true" type="video/mp4" length="1"/> -->
       </item>
     {% endfor %}
   </channel>

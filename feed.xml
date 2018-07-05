@@ -36,6 +36,8 @@ layout: null
     <googleplay:description>{{ site.description }}</googleplay:description>
     <googleplay:category text="Technology" />
     <googleplay:image href="{{ site.url }}/assets/images/logo-square.png"/>
+    <googleplay:explicit>no</googleplay:explicit>
+    <googleplay:category text="Technology"/>
 
     <itunes:type>episodic</itunes:type>
     <itunes:explicit>no</itunes:explicit>
@@ -70,6 +72,8 @@ layout: null
       <description>{{ html | xml_escape }}</description>
 
       <content:encoded><![CDATA[{{ html }}]]></content:encoded>
+
+      <googleplay:description>{{ description }}</googleplay:description>
 
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:subtitle>{{ headline }}</itunes:subtitle>

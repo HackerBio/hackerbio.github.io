@@ -6,7 +6,7 @@ An exploration into the daily lives of Software Developers, Hardware Tinkers, En
 
 Watch the most recent episodes at: [hacker.bio](https://hacker.bio)
 
-### Local Development
+## Local Development
 
 To run locally, start by generating an SSL certificate for local usage:
 
@@ -28,4 +28,18 @@ Chrome -> Setting -> (Advanced) Manage Certificates -> Import -> 'root.pem'
 
 ```bash
 docker-compose up
+```
+
+## Video Editing Commands
+
+###### Convert mp4 to mp3
+
+```bash
+ffmpeg -i video.mp4 -q:a 0 -map a audio.mp3
+```
+
+###### look up mp3 file duration
+
+```bash
+ffmpeg -i audio.mp3 2>&1 | grep Duration
 ```

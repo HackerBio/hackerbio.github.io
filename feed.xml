@@ -81,7 +81,6 @@ layout: null
         <media:title>{{ title }}</media:title>
         <media:description type="html"><![CDATA[{{ html }}]]></media:description>
         <media:thumbnail url="{{ image }}" width="480" height="360"/>
-        <media:category></media:category>
         <media:content url="{{ media }}/audio.mp3?raw=true" type="audio/mpeg" medium="audio" expression="full" isDefault="false"/>
         <!-- <media:content url="{{ media }}/audio.mp4?raw=true" type="video/mp4" medium="video" expression="full" isDefault="true"/> -->
       </media:group>

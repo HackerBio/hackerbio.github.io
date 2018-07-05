@@ -47,7 +47,7 @@ layout: null
         <title>{{ hacker.title | xml_escape }}</title>
         <description>{{ hacker.content | xml_escape }}</description>
 
-        <enclosure url="https://github.com/hackerbio/website/blob/master/hackers/{{ hacker.slug }}/audio.mp3?raw=true" type="audio/mpeg" length="1"/>
+        <enclosure url="https://media.githubusercontent.com/media/HackerBio/website/master/hackers/{{ hacker.slug }}/audio.mp3?raw=true" type="audio/mpeg" length="1"/>
 
         <itunes:summary>{{ hacker.content | markdownify | strip_html | xml_escape }}</itunes:summary>
         <itunes:subtitle>{{ hacker.headline | markdownify | strip_html | xml_escape }}</itunes:subtitle>

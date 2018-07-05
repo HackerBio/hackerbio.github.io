@@ -1,6 +1,6 @@
 ---
 name: Frédéric Harper
-date: 2018-07-10 12:00:00
+date: 2018-07-10 12:00:00 -0700
 headline: A passionate public speaker who has cracked the code of personal branding, Frédéric also published _"Success in programming"_ to international acclaim
 crowdcast: https://www.crowdcast.io/e/hacker-bio-frederic-harper
 ---

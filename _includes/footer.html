@@ -2,7 +2,7 @@
   <div class="container my-4 d-flex flex-column flex-md-row align-items-center justify-content-between">
     <div class="mb-3">
       <a class="mx-1 d-inline-block" href="#comingsoon"><img src="/assets/images/badges/google-podcasts.svg"/></a>
-      <a class="mx-1 d-inline-block" href="#comingsoon"><img src="/assets/images/badges/apple-podcasts.svg"/></a>
+      <a class="mx-1 d-inline-block" href="https://itunes.apple.com/ca/podcast/hacker-bio/id1407570151"><img src="/assets/images/badges/apple-podcasts.svg"/></a>
     </div>
 
     <div>
@@ -18,7 +18,7 @@
     document.querySelectorAll('a[href="#comingsoon"]').forEach(a => {
       a.addEventListener('click', event => {
         event.preventDefault()
-        alert('Coming Soon!\nPending Google & Apple publishing approvals! 🤷')
+        alert('Coming Soon!\n\nPending Google publishing approvals! 🤷')
       })
     })
   })

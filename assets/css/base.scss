@@ -29,6 +29,17 @@ header {
     height: 3em;
   }
 
+  .links {
+    a {
+      font-size: 2em;
+      color: var(--color-dark);
+    }
+
+    a:hover {
+      color: var(--color-light);
+    }
+  }
+
   .bg-light {
     background-color: transparent !important;
   }
@@ -36,22 +47,23 @@ header {
 
 footer {
   background-color: #f6f6f6;
+
+  img {
+    height: 50px;
+  }
+
+  a {
+    display: block;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    img {
+      height: 35px;
+    }
+  }
 }
 
-.btn-warning {
-  padding-right: 1.5em;
-  padding-left: 1.5em;
-
-  color: white;
-  background-color: var(--color-dark);
-  border-color: var(--color-dark);
-}
-
-.btn-warning:hover {
-    color: #fff;
-    background-color: var(--color-light);
-    border-color: var(--color-light);
-}
 
 .btn-warning:active {
     // color: #fff;

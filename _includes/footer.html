@@ -1,14 +1,13 @@
 <footer>
-  <div class="container my-4 d-flex flex-column flex-md-row align-items-center justify-content-between">
-    <div class="mb-3">
-      <a class="mx-1 d-inline-block" href="#comingsoon"><img src="/assets/images/badges/google-podcasts.svg"/></a>
-      <a class="mx-1 d-inline-block" href="https://itunes.apple.com/ca/podcast/hacker-bio/id1407570151"><img src="/assets/images/badges/apple-podcasts.svg"/></a>
-    </div>
-
-    <div>
-      <a class="mx-1 btn btn-warning" href="/feed.xml" rel="alternate" type="application/rss+xml"><i class="fas fa-rss"></i></a>
-      <a class="mx-1 btn btn-warning" href="https://twitter.com/thehackerbio"><i class="fab fa-twitter"></i></a>
-      <a class="mx-1 btn btn-warning" href="https://www.youtube.com/channel/UChKvchmAvT6mThad--aztvg"><i class="fab fa-youtube"></i></a>
+  <div class="container my-4">
+    <div class="row">
+      <a class="my-2 col-12 col-sm-3" target="_blank" href="#comingsoon"><img src="/assets/images/badges/google-podcasts.svg"/></a>
+      <a class="my-2 col-12 col-sm-3" target="_blank" href="https://itunes.apple.com/ca/podcast/hacker-bio/id1407570151"><img src="/assets/images/badges/apple-podcasts.svg"/></a>
+      <a class="my-2 col-12 col-sm-3" target="_blank" href="https://www.stitcher.com/podcast/hacker-bio"><img src="/assets/images/badges/stitcher.svg"/></a>
+      <a class="my-2 col-12 col-sm-3" target="_blank" href="https://soundcloud.com/hackerbio/"><img src="/assets/images/badges/soundcloud.svg"/></a>
+      <a class="my-2 col-12 col-sm-3" target="_blank" href="#comingsoon"><img src="/assets/images/badges/spotify.svg"/></a>
+      <a class="my-2 col-12 col-sm-3" target="_blank" href="#comingsoon"><img src="/assets/images/badges/tunein.svg"/></a>
+      <a class="my-2 col-12 col-sm-3" target="_blank" href="/feed.xml" rel="alternate" type="application/rss+xml"><img src="/assets/images/badges/rss.svg"/></a>
     </div>
   </div>
 </footer>
@@ -18,7 +17,7 @@
     document.querySelectorAll('a[href="#comingsoon"]').forEach(a => {
       a.addEventListener('click', event => {
         event.preventDefault()
-        alert('Coming Soon!\n\nPending Google publishing approvals! 🤷')
+        alert('Coming Soon!\n\nPending publisher approvals! 🤷')
       })
     })
   })

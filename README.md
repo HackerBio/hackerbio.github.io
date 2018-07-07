@@ -35,7 +35,7 @@ docker-compose up
 ###### Convert mp4 to mp3
 
 ```bash
-ffmpeg -i video.mp4 -q:a 0 -map a audio.mp3
+ffmpeg -i source.mp4 -q:a 0 -map a source.mp3
 ```
 
 ###### look up mp3 file duration

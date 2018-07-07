@@ -60,38 +60,38 @@ layout: null
       {% assign headline = hacker.headline | markdownify | strip_html | xml_escape %}
       {% assign description = hacker.content | markdownify | strip_html | xml_escape %}
       {% capture image %}{{ site.url }}/hackers/{{ hacker.slug }}/square.jpg{% endcapture %}
-      {% capture media %}https://media.githubusercontent.com/media/HackerBio/website/master/hackers/{{ hacker.slug }}{% endcapture %}
+      {% capture media %}http://storage.googleapis.com/hacker-bio.appspot.com/{{ hacker.slug }}{% endcapture %}
 
-    <item>
-      <guid isPermaLink="true">{{ link }}</guid>
+      <item>
+        <guid isPermaLink="true">{{ link }}</guid>
 
-      <link>{{ link }}</link>
-      <pubDate>{{ hacker.date | date_to_rfc822 }}</pubDate>
+        <link>{{ link }}</link>
+        <pubDate>{{ hacker.date | date_to_rfc822 }}</pubDate>
 
-      <title>{{ title }}</title>
-      <description>{{ html | xml_escape }}</description>
+        <title>{{ title }}</title>
+        <description>{{ html | xml_escape }}</description>
 
-      <content:encoded><![CDATA[{{ html }}]]></content:encoded>
+        <content:encoded><![CDATA[{{ html }}]]></content:encoded>
 
-      <googleplay:description>{{ description }}</googleplay:description>
+        <googleplay:description>{{ description }}</googleplay:description>
 
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:subtitle>{{ headline }}</itunes:subtitle>
-      <itunes:summary>{{ description }}</itunes:summary>
-      <itunes:duration>{{ hacker.media.audio.duration }}</itunes:duration>
-      <itunes:image href="{{ image }}"/>
+        <itunes:episodeType>full</itunes:episodeType>
+        <itunes:subtitle>{{ headline }}</itunes:subtitle>
+        <itunes:summary>{{ description }}</itunes:summary>
+        <itunes:duration>{{ hacker.media.audio.duration }}</itunes:duration>
+        <itunes:image href="{{ image }}"/>
 
-      <media:group>
-        <media:title>{{ title }}</media:title>
-        <media:description type="html"><![CDATA[{{ html }}]]></media:description>
-        <media:thumbnail url="{{ image }}" width="480" height="360"/>
-        <media:content url="{{ media }}/audio.mp3?raw=true" type="audio/mpeg" medium="audio" expression="full" isDefault="false"/>
-        <!-- <media:content url="{{ media }}/audio.mp4?raw=true" type="video/mp4" medium="video" expression="full" isDefault="true"/> -->
-      </media:group>
+        <media:group>
+          <media:title>{{ title }}</media:title>
+          <media:description type="html"><![CDATA[{{ html }}]]></media:description>
+          <media:thumbnail url="{{ image }}" width="480" height="360"/>
+          <media:content url="{{ media }}/audio.mp3" type="audio/mpeg" medium="audio" expression="full" isDefault="false"/>
+          <media:content url="{{ media }}/video.mp4" type="video/mp4" medium="video" expression="full" isDefault="true"/>
+        </media:group>
 
-      <enclosure url="{{ media }}/audio.mp3?raw=true" type="audio/mpeg"/>
-      <!-- <enclosure url="{{ media }}/video.mp4?raw=true" type="video/mp4"/> -->
-    </item>
+        <enclosure url="{{ media }}/audio.mp3" type="audio/mpeg"/>
+        <enclosure url="{{ media }}/video.mp4" type="video/mp4"/>
+      </item>
     {% endfor %}
   </channel>
 </rss>

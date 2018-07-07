@@ -26,7 +26,7 @@ layout: base
 {% if page.media.youtube %}
   <h2 class="my-5">Watch Recording</h2>
 
-	<video controls crossorigin playsinline poster="/assets/images/banner.png">
+	<video controls crossorigin playsinline poster="/hackers/{{ page.slug }}/youtube.jpg">
     <source src="http://storage.googleapis.com/hacker-bio.appspot.com/{{ page.slug }}/video.mp4" type="video/mp4" size="720">
 	</video>
 {% elsif page.crowdcast %}

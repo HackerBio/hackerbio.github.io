@@ -1,17 +1,19 @@
 {% capture title %}{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}{% endcapture %}
 {% capture description %}{% if page.headline %}{{ page.headline | markdownify | strip_html }} | {% else %}{{ site.description }}{% endif %}{% endcapture %}
-{% capture image %}{% if page.layout == 'hacker' %}hackers/{{ page.slug }}/social.jpg{% else %}assets/images/banner.png{% endif %}?time={{ site.time | date_to_xmlschema }}{% endcapture %}
+{% capture image %}{% if page.layout == 'hacker' %}hackers/{{ page.slug }}{% else %}assets/images{% endif %}{% endcapture %}
 
 <title>{{ title }}</title>
 
+<!-- http://schema.org/OnDemandEvent -->
+
 <!-- SEO -->
 <meta name="description" content="{{ description }}"/>
-<meta name="image" content="{{ site.url }}/{{ image }}"/>
+<meta name="image" content="{{ site.url }}/{{ image }}/banner.jpg"/>
 
 <!-- Schema.org for Google -->
 <meta itemprop="name" content="{{ title }}"/>
 <meta itemprop="description" content="{{ description }}"/>
-<meta itemprop="image" content="{{ site.url }}/{{ image }}"/>
+<meta itemprop="image" content="{{ site.url }}/{{ image }}/banner.jpg"/>
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image"/>
@@ -19,12 +21,12 @@
 <meta name="twitter:description" content="{{ description }}"/>
 <meta name="twitter:site" content="@TheHackerBio"/>
 <meta name="twitter:creator" content="@ahmadnassri"/>
-<meta name="twitter:image" content="{{ site.url }}/{{ image }}"/>
+<meta name="twitter:image" content="{{ site.url }}/{{ image }}/twitter.jpg"/>
 
 <!-- Open Graph general (Facebook, Pinterest & Google+) -->
 <meta property="og:title" content="{{ title }}"/>
 <meta property="og:description" content="{{ description }}"/>
-<meta property="og:image" content="{{ site.url }}/{{ image }}"/>
+<meta property="og:image" content="{{ site.url }}/{{ image }}/facebook.jpg"/>
 <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
 <meta property="og:site_name" content="{{ site.title }}"/>
 <meta property="fb:admins" content="227304446"/>
@@ -32,12 +34,49 @@
 
 <!-- schema.org -->
 <script type="application/ld+json">
+{% if page.layout == 'hacker' %}
+  {
+    "@context": "http://schema.org",
+    "@type": "VideoObject",
+    "name": "{{ page.title }}",
+    "description": "{{ page.headline | markdownify | strip_html }}",
+    "thumbnailUrl": "{{ site.url }}/{{ image }}/youtube.jpg",
+    "uploadDate": "{{ page.date | date_to_xmlschema }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site.title }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}/assets/logo-square.jpg"
+      }
+    },
+    "contentUrl": "http://storage.googleapis.com/hacker-bio.appspot.com/{{ page.slug }}/video.mp4"
+  }
+  {% else %}
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}",
+    "sameAs": [
+      {% for link in site.data.links.social %}
+        "{{ link[1] }}",
+      {% endfor %}
+      {% for link in site.data.links.subscribe %}
+        "{{ link[1] }}"{% if forloop.last == false %},{% endif %}
+      {% endfor %}
+    ],
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}/assets/logo-square.jpg",
+      "width": 1500,
+      "height": 1500
+    }
+  }
+{% endif %}
 </script>
 
-<link rel="canonical" href="{{ site.url }}{{ page.url }}">
-
 <!-- favicon -->
-
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
@@ -49,3 +88,7 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
 <meta name="theme-color" content="#e6bb21">
+
+<!-- links -->
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<link type="application/rss+xml" rel="alternate" title="Hacker:Bio" href="{{ site.url }}/feed.xml"/>

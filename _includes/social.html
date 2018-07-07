@@ -1,6 +1,6 @@
 {% capture title %}{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}{% endcapture %}
 {% capture description %}{% if page.headline %}{{ page.headline | markdownify | strip_html }} | {% else %}{{ site.description }}{% endif %}{% endcapture %}
-{% capture image %}{% if page.layout == 'hacker' %}hackers/{{ page.slug }}/photo.jpg{% else %}assets/images/banner.png{% endif %}?time={{ site.time | date_to_xmlschema }}{% endcapture %}
+{% capture image %}{% if page.layout == 'hacker' %}hackers/{{ page.slug }}/social.jpg{% else %}assets/images/banner.png{% endif %}?time={{ site.time | date_to_xmlschema }}{% endcapture %}
 
 <title>{{ title }}</title>
 

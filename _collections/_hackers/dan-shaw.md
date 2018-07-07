@@ -5,7 +5,7 @@ headline: He has been referred to as _"The Godfather of Node.js"_ for his tirele
 crowdcast: https://www.crowdcast.io/e/hacker-bio-dan-shaw
 media:
   audio:
-    duration: "01:05:40"
+    duration: "01:06:19"
   youtube: _kk9AeOwCC0
 ---
 

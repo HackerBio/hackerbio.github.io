@@ -1,6 +1,6 @@
 repository:
   name: website
-  description: An exploration into the daily lives of Software Developers, Hardware Tinkers, Engineers and Technologists to better understand the culture, mindset and motivation of this generation.
+  description: An exploration into the daily lives of Software Developers, Hardware Tinkerers, Engineers and Technologists to better understand the culture, mindset and motivation of this generation.
   topics: podcast, website, jekyll
   homepage: https://hacker.bio
   private: false

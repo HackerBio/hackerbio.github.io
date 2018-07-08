@@ -7,7 +7,7 @@ crowdcast: https://www.crowdcast.io/e/hacker-bio-dan-shaw
 media:
   audio:
     duration: "01:06:19"
-  youtube: _kk9AeOwCC0
+  youtube: qZjc9JJRjyM
 ---
 
 Dan has dedicated his career to growing the Node.js Ecosystem. he was instrumental in the formation of the Node.js Foundation, was a founding member. he served on the Node.js Foundation Board of Directors as Director and Secretary. he has been referred to as "The Godfather of Node.js" for his tireless efforts to build community and unite the needs of developers and business leaders.

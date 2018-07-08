@@ -26,9 +26,15 @@ layout: base
 {% if page.media.youtube %}
   <h2 class="my-5">Watch Recording</h2>
 
+  <!-- Native Video Player
 	<video controls crossorigin playsinline poster="/hackers/{{ page.slug }}/youtube.jpg">
     <source src="http://storage.googleapis.com/hacker-bio.appspot.com/{{ page.slug }}/video.mp4" type="video/mp4" size="720">
 	</video>
+  -->
+
+  <div id="youtube" class="plyr__video-embed" data-plyr-provider="youtube" data-plyr-embed-id="{{ page.media.youtube }}">
+    <iframe src="https://www.youtube.com/embed/{{ page.media.youtube }}?origin=https://{{ site.url }}&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe>
+  </div>
 {% elsif page.crowdcast %}
   <h2 class="my-5">Watch Live Stream</h2>
 
@@ -41,6 +47,7 @@ layout: base
   document.addEventListener('DOMContentLoaded', () => {
     const publisherId = 891530901789062
     window.audio = new Plyr('audio', { enabled: true, publisherId });
-    window.youtube = new Plyr('video', { enabled: true, publisherId });
+    // window.native = new Plyr('video', { enabled: true, publisherId });
+    window.youtube = new Plyr('#youtube', { enabled: true, publisherId });
   })
 </script>

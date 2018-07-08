@@ -4,20 +4,7 @@
       {% for link in site.data.links.subscribe %}
         <a class="my-2 col-12 col-sm-4 col-sm-3 col-lg-2" target="_blank" href="{{ link[1] }}"><img src="/assets/images/badges/{{ link[0] }}.svg"/></a>
       {% endfor %}
-      <a class="my-2 col-12 col-sm-4 col-sm-3 col-lg-2" target="_blank" href="#comingsoon"><img src="/assets/images/badges/spotify.svg"/></a>
-      <a class="my-2 col-12 col-sm-4 col-sm-3 col-lg-2" target="_blank" href="https://tunein.com/podcasts/Technology-Podcasts/Hacker-Bio-p1141421/"><img src="/assets/images/badges/tunein.svg"/></a>
       <a class="my-2 col-12 col-sm-4 col-sm-3 col-lg-2" target="_blank" href="/feed.xml" rel="alternate" type="application/rss+xml"><img src="/assets/images/badges/rss.svg"/></a>
     </div>
   </div>
 </footer>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('a[href="#comingsoon"]').forEach(a => {
-      a.addEventListener('click', event => {
-        event.preventDefault()
-        alert('Coming Soon!\n\nPending publisher approvals! 🤷')
-      })
-    })
-  })
-</script>

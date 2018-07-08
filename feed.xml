@@ -97,11 +97,19 @@ layout: null
     <!-- remove outdated content -->
     {% assign blocked = site.hackers | where_exp: "item", "item.updated" | sort: 'date' %}
     {% for hacker in blocked %}
+      {% assign title = hacker.title | xml_escape %}
       {% assign link = hacker.url | prepend: site.url %}
+      {% capture media %}http://storage.googleapis.com/hacker-bio.appspot.com/{{ hacker.slug }}{% endcapture %}
+
       <item>
         <guid isPermaLink="true">{{ link }}</guid>
+
+        <title>{{ title }}</title>
+
         <itunes:block>yes</itunes:block>
         <googleplay:block>yes</googleplay:block>
+
+        <enclosure url="{{ media }}/audio.mp3?pubDate={{ hacker.updated | default: hacker.date | date: '%s' }}" type="audio/mpeg"/>
       </item>
     {% endfor %}
   </channel>

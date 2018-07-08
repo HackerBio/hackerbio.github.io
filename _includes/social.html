@@ -8,12 +8,12 @@
 
 <!-- SEO -->
 <meta name="description" content="{{ description }}"/>
-<meta name="image" content="{{ site.url }}/{{ image }}/banner.jpg?pubDate={{ site.time }}"/>
+<meta name="image" content="{{ site.url }}/{{ image }}/banner.jpg?pubDate={{ site.time | date: '%s' }}"/>
 
 <!-- Schema.org for Google -->
 <meta itemprop="name" content="{{ title }}"/>
 <meta itemprop="description" content="{{ description }}"/>
-<meta itemprop="image" content="{{ site.url }}/{{ image }}/banner.jpg?pubDate={{ site.time }}"/>
+<meta itemprop="image" content="{{ site.url }}/{{ image }}/banner.jpg?pubDate={{ site.time | date: '%s' }}"/>
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image"/>
@@ -21,12 +21,12 @@
 <meta name="twitter:description" content="{{ description }}"/>
 <meta name="twitter:site" content="@TheHackerBio"/>
 <meta name="twitter:creator" content="@ahmadnassri"/>
-<meta name="twitter:image" content="{{ site.url }}/{{ image }}/twitter.jpg?pubDate={{ site.time }}"/>
+<meta name="twitter:image" content="{{ site.url }}/{{ image }}/twitter.jpg?pubDate={{ site.time | date: '%s' }}"/>
 
 <!-- Open Graph general (Facebook, Pinterest & Google+) -->
 <meta property="og:title" content="{{ title }}"/>
 <meta property="og:description" content="{{ description }}"/>
-<meta property="og:image" content="{{ site.url }}/{{ image }}/facebook.jpg?pubDate={{ site.time }}"/>
+<meta property="og:image" content="{{ site.url }}/{{ image }}/facebook.jpg?pubDate={{ site.time | date: '%s' }}"/>
 <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
 <meta property="og:site_name" content="{{ site.title }}"/>
 <meta property="fb:admins" content="227304446"/>
@@ -40,7 +40,7 @@
     "@type": "VideoObject",
     "name": "{{ page.title }}",
     "description": "{{ page.headline | markdownify | strip_html }}",
-    "thumbnailUrl": "{{ site.url }}/{{ image }}/youtube.jpg?pubDate={{ site.time }}",
+    "thumbnailUrl": "{{ site.url }}/{{ image }}/youtube.jpg?pubDate={{ site.time | date: '%s' }}",
     "uploadDate": "{{ page.date | date_to_xmlschema }}",
     "publisher": {
       "@type": "Organization",

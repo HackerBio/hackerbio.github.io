@@ -16,7 +16,7 @@ layout: null
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     <ttl>1440</ttl>
 
-    <sy:updatePeriod>weekly</sy:updatePeriod>
+    <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
 
     <title>{{ site.title | xml_escape }}</title>
@@ -63,7 +63,7 @@ layout: null
       {% capture media %}http://storage.googleapis.com/hacker-bio.appspot.com/{{ hacker.slug }}{% endcapture %}
 
       <item>
-        <guid isPermaLink="true">{{ link }}</guid>
+        <guid isPermaLink="true">{{ link }}{% if hacker.updated %}?updated={{ hacker.updated | date: '%s' }}{% endif %}</guid>
 
         <link>{{ link }}</link>
         <pubDate>{{ hacker.date | date_to_rfc822 }}</pubDate>
@@ -85,12 +85,12 @@ layout: null
           <media:title>{{ title }}</media:title>
           <media:description type="html"><![CDATA[{{ html }}]]></media:description>
           <media:thumbnail url="{{ image }}" width="480" height="360"/>
-          <media:content url="{{ media }}/audio.mp3?pubDate={{ site.time }}" type="audio/mpeg" medium="audio" expression="full" isDefault="false"/>
-          <media:content url="{{ media }}/video.mp4?pubDate={{ site.time }}" type="video/mp4" medium="video" expression="full" isDefault="true"/>
+          <media:content url="{{ media }}/audio.mp3?pubDate={{ hacker.updated | default: hacker.date | date: '%s' }}" type="audio/mpeg" medium="audio" expression="full" isDefault="false"/>
+          <media:content url="{{ media }}/video.mp4?pubDate={{ hacker.updated | default: hacker.date | date: '%s' }}" type="video/mp4" medium="video" expression="full" isDefault="true"/>
         </media:group>
 
-        <enclosure url="{{ media }}/audio.mp3?pubDate={{ site.time }}" type="audio/mpeg"/>
-        <enclosure url="{{ media }}/video.mp4?pubDate={{ site.time }}" type="video/mp4"/>
+        <enclosure url="{{ media }}/audio.mp3?pubDate={{ hacker.updated | default: hacker.date | date: '%s' }}" type="audio/mpeg"/>
+        <enclosure url="{{ media }}/video.mp4?pubDate={{ hacker.updated | default: hacker.date | date: '%s' }}" type="video/mp4"/>
       </item>
     {% endfor %}
   </channel>

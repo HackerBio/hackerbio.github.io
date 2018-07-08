@@ -60,7 +60,7 @@ layout: null
       {% assign headline = hacker.headline | markdownify | strip_html | xml_escape %}
       {% assign description = hacker.content | markdownify | strip_html | xml_escape %}
       {% capture image %}{{ site.url }}/hackers/{{ hacker.slug }}/square.jpg{% endcapture %}
-      {% capture media %}http://storage.googleapis.com/hacker-bio.appspot.com/{{ hacker.slug }}{% endcapture %}
+      {% capture media %}http://storage.googleapis.com/hacker-bio/{{ hacker.slug }}{% endcapture %}
 
       <item>
         <guid isPermaLink="true">{{ link }}{% if hacker.updated %}?updated={{ hacker.updated | date: '%s' }}{% endif %}</guid>
@@ -99,7 +99,7 @@ layout: null
     {% for hacker in blocked %}
       {% assign title = hacker.title | xml_escape %}
       {% assign link = hacker.url | prepend: site.url %}
-      {% capture media %}http://storage.googleapis.com/hacker-bio.appspot.com/{{ hacker.slug }}{% endcapture %}
+      {% capture media %}http://storage.googleapis.com/hacker-bio/{{ hacker.slug }}{% endcapture %}
 
       <item>
         <guid isPermaLink="true">{{ link }}</guid>

@@ -93,5 +93,16 @@ layout: null
         <enclosure url="{{ media }}/video.mp4?pubDate={{ hacker.updated | default: hacker.date | date: '%s' }}" type="video/mp4"/>
       </item>
     {% endfor %}
+
+    <!-- remove outdated content -->
+    {% assign blocked = site.hackers | where_exp: "item", "item.updated" | sort: 'date' %}
+    {% for hacker in blocked %}
+      {% assign link = hacker.url | prepend: site.url %}
+      <item>
+        <guid isPermaLink="true">{{ link }}</guid>
+        <itunes:block>yes</itunes:block>
+        <googleplay:block>yes</googleplay:block>
+      </item>
+    {% endfor %}
   </channel>
 </rss>

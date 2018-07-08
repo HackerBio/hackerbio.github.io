@@ -2,6 +2,8 @@
 layout: base
 ---
 
+{% assign slug = page.url | replace: '/hackers/', '' | replace: '/index', '' %}
+
 <section class="my-5">
   <header class="d-md-flex flex-space-between align-items-center justify-content-between">
     <h1>{{ page.name }}</h1>
@@ -10,12 +12,12 @@ layout: base
 
 
   <div class="my-5 photo">
-    <img src="/hackers/{{ page.slug }}/photo.jpg" alt="{{ page.name }}"/>
+    <img src="photo.jpg" alt="{{ page.name }}"/>
 
     {% if page.media.audio.duration %}
       <div class="player">
         <audio crossorigin playsinline>
-          <source src="http://storage.googleapis.com/hacker-bio/{{ page.slug }}/audio.mp3" type="audio/mp3">
+          <source src="http://storage.googleapis.com/hacker-bio/{{ slug }}/audio.mp3" type="audio/mp3">
         </audio>
       </div>
     {% endif %}
@@ -27,8 +29,8 @@ layout: base
   <h2 class="my-5">Watch Recording</h2>
 
   <!-- Native Video Player
-	<video controls crossorigin playsinline poster="/hackers/{{ page.slug }}/youtube.jpg">
-    <source src="http://storage.googleapis.com/hacker-bio/{{ page.slug }}/video.mp4" type="video/mp4" size="720">
+	<video controls crossorigin playsinline poster="/hackers/{{ slug }}/youtube.jpg">
+    <source src="http://storage.googleapis.com/hacker-bio/{{ slug }}/video.mp4" type="video/mp4" size="720">
 	</video>
   -->
 

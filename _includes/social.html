@@ -1,6 +1,6 @@
-{% capture title %}{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}{% endcapture %}
+{% capture title %}{% if page.layout == 'hacker' %}{{ page.name }} | {% endif %}{{ site.title }}{% endcapture %}
 {% capture description %}{% if page.headline %}{{ page.headline | markdownify | strip_html }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
-{% capture image %}{% if page.layout == 'hacker' %}hackers/{{ page.slug }}{% else %}assets/images{% endif %}{% endcapture %}
+{% capture image %}{{ site.url }}{% if page.layout == 'hacker' %}{{ page.id | replace: '/index', '' }}{% else %}/assets/images{% endif %}{% endcapture %}
 
 <title>{{ title }}</title>
 
@@ -8,12 +8,12 @@
 
 <!-- SEO -->
 <meta name="description" content="{{ description }}"/>
-<meta name="image" content="{{ site.url }}/{{ image }}/banner.jpg?pubDate={{ site.time | date: '%s' }}"/>
+<meta name="image" content="{{ image }}/banner.jpg?pubDate={{ site.time | date: '%s' }}"/>
 
 <!-- Schema.org for Google -->
 <meta itemprop="name" content="{{ title }}"/>
 <meta itemprop="description" content="{{ description }}"/>
-<meta itemprop="image" content="{{ site.url }}/{{ image }}/banner.jpg?pubDate={{ site.time | date: '%s' }}"/>
+<meta itemprop="image" content="{{ image }}/banner.jpg?pubDate={{ site.time | date: '%s' }}"/>
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image"/>
@@ -21,13 +21,13 @@
 <meta name="twitter:description" content="{{ description }}"/>
 <meta name="twitter:site" content="@TheHackerBio"/>
 <meta name="twitter:creator" content="@ahmadnassri"/>
-<meta name="twitter:image" content="{{ site.url }}/{{ image }}/twitter.jpg?pubDate={{ site.time | date: '%s' }}"/>
+<meta name="twitter:image" content="{{ image }}/twitter.jpg?pubDate={{ site.time | date: '%s' }}"/>
 
 <!-- Open Graph general (Facebook, Pinterest & Google+) -->
 <meta property="og:title" content="{{ title }}"/>
 <meta property="og:description" content="{{ description }}"/>
-<meta property="og:image" content="{{ site.url }}/{{ image }}/facebook.jpg?pubDate={{ site.time | date: '%s' }}"/>
-<meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
+<meta property="og:image" content="{{ image }}/facebook.jpg?pubDate={{ site.time | date: '%s' }}"/>
+<meta property="og:url" content="{{ site.url }}{{ page.url | replace: 'index', '' }}"/>
 <meta property="og:site_name" content="{{ site.title }}"/>
 <meta property="fb:admins" content="227304446"/>
 <meta property="og:type" content="website"/>
@@ -38,9 +38,9 @@
   {
     "@context": "http://schema.org",
     "@type": "VideoObject",
-    "name": "{{ page.title }}",
+    "name": "{{ page.name }}",
     "description": "{{ page.headline | markdownify | strip_html }}",
-    "thumbnailUrl": "{{ site.url }}/{{ image }}/youtube.jpg?pubDate={{ site.time | date: '%s' }}",
+    "thumbnailUrl": "{{ image }}/youtube.jpg?pubDate={{ site.time | date: '%s' }}",
     "uploadDate": "{{ page.date | date_to_xmlschema }}",
     "publisher": {
       "@type": "Organization",
@@ -50,7 +50,7 @@
         "url": "{{ site.url }}/assets/logo-square.jpg"
       }
     },
-    "contentUrl": "http://storage.googleapis.com/hacker-bio/{{ page.slug }}/video.mp4"
+    "contentUrl": "http://storage.googleapis.com/hacker-bio/{{ page.id | replace: '/hackers/', '' | replace: '/index', '' }}/video.mp4"
   }
   {% else %}
   {
@@ -90,5 +90,5 @@
 <meta name="theme-color" content="#e6bb21">
 
 <!-- links -->
-<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url | replace: 'index', '' }}">
 <link type="application/rss+xml" rel="alternate" title="Hacker:Bio" href="{{ site.url }}/feed.xml"/>

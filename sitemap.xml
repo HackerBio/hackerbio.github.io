@@ -16,7 +16,7 @@ pages:
 
   {% for hacker in site.hackers %}
     <url>
-      <loc>{{ hacker.url | prepend: site.url }}</loc>
+      <loc>{{ hacker.url | prepend: site.url | replace: 'index', '' }}</loc>
       <lastmod>{{ hacker.date | date: "%F" }}</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>

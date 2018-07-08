@@ -5,5 +5,5 @@ pages:
 ---
 {% for page in page.pages %}{{ page | prepend: site.url }}
 {% endfor %}
-{% for hacker in site.hackers %}{{ hacker.url | prepend: site.url }}
+{% for hacker in site.hackers %}{{ hacker.url | prepend: site.url | replace: 'index', '' }}
 {% endfor %}

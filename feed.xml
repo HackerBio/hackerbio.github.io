@@ -54,13 +54,14 @@ layout: null
 
     {% assign hackers = site.hackers | where_exp: "item", "item.media" | sort: 'date' %}
     {% for hacker in hackers %}
-      {% assign link = hacker.url | prepend: site.url %}
-      {% assign title = hacker.title | xml_escape %}
+      {% assign link = hacker.url | replace: 'index', '' | prepend: site.url %}
+      {% assign slug = hacker.url | replace: '/hackers/', '' | replace: '/index', '' %}
+      {% assign title = hacker.name | xml_escape %}
       {% assign html = hacker.content | markdownify %}
       {% assign headline = hacker.headline | markdownify | strip_html | xml_escape %}
       {% assign description = hacker.content | markdownify | strip_html | xml_escape %}
-      {% capture image %}{{ site.url }}/hackers/{{ hacker.slug }}/square.jpg{% endcapture %}
-      {% capture media %}http://storage.googleapis.com/hacker-bio/{{ hacker.slug }}{% endcapture %}
+      {% capture image %}{{ site.url }}/hackers/{{ slug }}/square.jpg{% endcapture %}
+      {% capture media %}http://storage.googleapis.com/hacker-bio/{{ slug }}{% endcapture %}
 
       <item>
         <guid isPermaLink="true">{{ link }}{% if hacker.updated %}?updated={{ hacker.updated | date: '%s' }}{% endif %}</guid>
@@ -97,9 +98,9 @@ layout: null
     <!-- remove outdated content -->
     {% assign blocked = site.hackers | where_exp: "item", "item.updated" | sort: 'date' %}
     {% for hacker in blocked %}
-      {% assign title = hacker.title | xml_escape %}
-      {% assign link = hacker.url | prepend: site.url %}
-      {% capture media %}http://storage.googleapis.com/hacker-bio/{{ hacker.slug }}{% endcapture %}
+      {% assign link = hacker.url | replace: 'index', '' | prepend: site.url %}
+      {% assign slug = hacker.url | replace: '/hackers/', '' | replace: '/index', '' %}
+      {% capture media %}http://storage.googleapis.com/hacker-bio/{{ slug }}{% endcapture %}
 
       <item>
         <guid isPermaLink="true">{{ link }}</guid>

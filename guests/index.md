@@ -1,6 +1,5 @@
 ---
 layout: page
-permalink: /guests/
 ---
 
 <!-- TODO: add info about profile page setup -->

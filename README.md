@@ -1,4 +1,4 @@
-![](https://hacker.bio/assets/images/logo-small.png)
+![](https://hacker.bio/assets/images/logo.svg)
 
 # Hacker Bio Website
 

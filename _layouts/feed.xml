@@ -1,0 +1,56 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:media="http://search.yahoo.com/mrss/"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/">
+  <channel>
+    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>{{ site.url }}</link>
+    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <ttl>1440</ttl>
+
+    <sy:updatePeriod>daily</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+
+    <title>{{ site.title | xml_escape }}</title>
+    <description>{{ site.description | xml_escape }}</description>
+    <language>en-us</language>
+    <copyright>&#x2117; &amp; &#xA9; {{ site.title }} {{ site.time | date: "%Y" }}</copyright>
+    <webMaster>ahmad@hacker.bio (Ahmad Nassri)</webMaster>
+    <managingEditor>ahmad@hacker.bio (Ahmad Nassri)</managingEditor>
+
+    <image>
+      <url>{{ site.url }}/assets/images/logo-square.png</url>
+      <title>{{ site.title }}</title>
+      <link>{{ site.url }}</link>
+    </image>
+
+    <googleplay:email>ahmad@hacker.bio</googleplay:email>
+    <googleplay:description>{{ site.description }}</googleplay:description>
+    <googleplay:category text="Technology" />
+    <googleplay:image href="{{ site.url }}/assets/images/logo-square.png"/>
+    <googleplay:explicit>no</googleplay:explicit>
+    <googleplay:category text="Technology"/>
+
+    <itunes:type>episodic</itunes:type>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:author>Ahmad Nassri</itunes:author>
+    <itunes:subtitle>{{ site.subtitle }}</itunes:subtitle>
+    <itunes:summary>{{ site.description }}</itunes:summary>
+    <itunes:category text="Technology"/>
+    <itunes:image href="{{ site.url }}/assets/images/logo-square.png"/>
+    <itunes:keywords>bio, Developers, Engineers, Technologists, Programmers, Leaders, Designers, Architects, Students, Hackers</itunes:keywords>
+    <itunes:owner>
+      <itunes:name>Ahmad Nassri</itunes:name>
+      <itunes:email>ahmad@hacker.bio</itunes:email>
+    </itunes:owner>
+
+    {{ content }}
+  </channel>
+</rss>

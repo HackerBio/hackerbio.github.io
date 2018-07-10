@@ -35,10 +35,10 @@ layout: feed
       <media:title>{{ title }}</media:title>
       <media:description type="html"><![CDATA[{{ html }}]]></media:description>
       <media:thumbnail url="{{ image }}" width="480" height="360"/>
-      <media:content url="{{ media }}/audio.mp3?pubDate={{ hacker.updated | default: hacker.date | date: '%s' }}" type="audio/mpeg" medium="audio" expression="full" isDefault="false"/>
+      <media:content url="{{ media }}/video.mp4?pubDate={{ hacker.updated | default: hacker.date | date: '%s' }}" type="video/mp4" medium="video" expression="full" isDefault="true"/>
     </media:group>
 
-    <enclosure url="{{ media }}/audio.mp3?pubDate={{ hacker.updated | default: hacker.date | date: '%s' }}" type="audio/mpeg"/>
+    <enclosure url="{{ media }}/video.mp4?pubDate={{ hacker.updated | default: hacker.date | date: '%s' }}" type="video/mp4"/>
   </item>
 {% endfor %}
 
@@ -57,6 +57,6 @@ layout: feed
     <itunes:block>yes</itunes:block>
     <googleplay:block>yes</googleplay:block>
 
-    <enclosure url="{{ media }}/audio.mp3?pubDate={{ hacker.updated | default: hacker.date | date: '%s' }}" type="audio/mpeg"/>
+    <enclosure url="{{ media }}/video.mp4?pubDate={{ hacker.updated | default: hacker.date | date: '%s' }}" type="video/mp4"/>
   </item>
 {% endfor %}

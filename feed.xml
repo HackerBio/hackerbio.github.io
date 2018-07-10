@@ -45,6 +45,7 @@ layout: feed
 <!-- remove outdated content -->
 {% assign blocked = site.hackers | where_exp: "item", "item.updated" | sort: 'date' %}
 {% for hacker in blocked %}
+  {% assign title = hacker.name | xml_escape %}
   {% assign link = hacker.url | replace: 'index', '' | prepend: site.url %}
   {% assign slug = hacker.url | replace: '/hackers/', '' | replace: '/index', '' %}
   {% capture media %}http://storage.googleapis.com/hacker-bio/{{ slug }}{% endcapture %}

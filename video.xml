@@ -34,7 +34,7 @@ layout: feed
     <media:group>
       <media:title>{{ title }}</media:title>
       <media:description type="html"><![CDATA[{{ html }}]]></media:description>
-      <media:thumbnail url="{{ image }}" width="480" height="360"/>
+      <media:thumbnail url="{{ image }}"/>
       <media:content url="{{ media }}/video.mp4?pubDate={{ hacker.updated | default: hacker.date | date: '%s' }}" type="video/mp4" medium="video" expression="full" isDefault="true"/>
     </media:group>
 

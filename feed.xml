@@ -34,7 +34,7 @@ layout: feed
     <media:group>
       <media:title>{{ title }}</media:title>
       <media:description type="html"><![CDATA[{{ html }}]]></media:description>
-      <media:thumbnail url="{{ image }}" width="480" height="360"/>
+      <media:thumbnail url="{{ image }}"/>
       <media:content url="{{ media }}/audio.mp3?pubDate={{ hacker.updated | default: hacker.date | date: '%s' }}" type="audio/mpeg" medium="audio" expression="full" isDefault="false"/>
     </media:group>
 

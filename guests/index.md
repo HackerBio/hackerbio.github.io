@@ -26,7 +26,7 @@ Although the show is recorded and streamed live on [`Crowdcast`][crowdcast] we a
 - Go to QuickTime
 - Click `File` → `New Audio Recording`
 - Click the drop down next to the record button to choose the microphone source _(e.g. USB Mic)_
-- Set the quality to hight
+- Set the quality to high
 - Start & Stop recording when the host instructs you to do so
 - When done, click `File` → `Save`
 - Send the file to `ahmad@hacker.bio` when ready

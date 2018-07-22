@@ -41,23 +41,3 @@ layout: feed
     <enclosure url="{{ media }}/audio.mp3?pubDate={{ hacker.updated | default: hacker.date | date: '%s' }}" type="audio/mpeg"/>
   </item>
 {% endfor %}
-
-<!-- remove outdated content -->
-{% assign blocked = site.hackers | where_exp: "item", "item.updated" | sort: 'date' %}
-{% for hacker in blocked %}
-  {% assign title = hacker.name | xml_escape %}
-  {% assign link = hacker.url | replace: 'index', '' | prepend: site.url %}
-  {% assign slug = hacker.url | replace: '/hackers/', '' | replace: '/index', '' %}
-  {% capture media %}http://storage.googleapis.com/hacker-bio/{{ slug }}{% endcapture %}
-
-  <item>
-    <guid isPermaLink="true">{{ link }}</guid>
-
-    <title>{{ title }}</title>
-
-    <itunes:block>yes</itunes:block>
-    <googleplay:block>yes</googleplay:block>
-
-    <enclosure url="{{ media }}/audio.mp3?pubDate={{ hacker.updated | default: hacker.date | date: '%s' }}" type="audio/mpeg"/>
-  </item>
-{% endfor %}

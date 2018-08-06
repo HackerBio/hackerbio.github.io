@@ -10,9 +10,16 @@ First off, thank you for joining us on **Hacker:Bio**!
 
 We strive for the best audio quality possible _(within reason)_. So we've prepared these instructions to help you get setup and sound your best on the show. Please take 5 minutes and read through and follow the instructions.
 
+## Scheduling & Announcement
+
+- Provide Provide the following:
+- Short tagline about you 150 characters or less
+- Bio between 400 and 800 characters
+- Recent photo with at least `2000px` width and `1333px` height _(or equivalent ratio)_
+
 ## Before Recording
 
-- A reliable internet connection
+- Use a reliable internet connection
 - Use a good USB microphone, USB headset, or the ever trusty MacBook Pro mic.
 - Headphones! Yes, headphones are required. _(Over-the-ear preferred)_
 - A quiet place to record

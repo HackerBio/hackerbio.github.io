@@ -12,10 +12,10 @@ We strive for the best audio quality possible _(within reason)_. So we've prepar
 
 ## Scheduling & Announcement
 
-- Provide Provide the following:
-- Short tagline about you 150 characters or less
-- Bio between 400 and 800 characters
-- Recent photo with at least `2000px` width and `1333px` height _(or equivalent ratio)_
+- Please Provide the following:
+  - Short tagline about you 150 characters or less
+  - Bio between 400 and 800 characters
+  - Recent photo with at least `2000px` width and `1333px` height _(or equivalent ratio)_
 
 ## Before Recording
 

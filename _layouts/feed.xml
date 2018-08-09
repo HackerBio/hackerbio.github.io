@@ -13,7 +13,7 @@
     <link>{{ site.url }}</link>
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <ttl>1440</ttl>
+    <ttl>60</ttl>
 
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>

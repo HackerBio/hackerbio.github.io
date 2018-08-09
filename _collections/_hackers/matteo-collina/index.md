@@ -4,6 +4,7 @@ date: 2018-08-09 09:00:00 -0400
 headline: Matteo is a code pirate and mad scientist. He spends most of his days programming in Node.js
 crowdcast: https://www.crowdcast.io/e/hacker-bio-matteo-collina
 media:
+  duration: "00:48:06"
   soundcloud: 483267528
 ---
 

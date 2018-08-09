@@ -28,7 +28,7 @@ layout: feed
     <itunes:episodeType>full</itunes:episodeType>
     <itunes:subtitle>{{ headline }}</itunes:subtitle>
     <itunes:summary>{{ description }}</itunes:summary>
-    <itunes:duration>{{ hacker.media.audio.duration }}</itunes:duration>
+    <itunes:duration>{{ hacker.media.duration }}</itunes:duration>
     <itunes:image href="{{ image }}"/>
 
     <media:group>

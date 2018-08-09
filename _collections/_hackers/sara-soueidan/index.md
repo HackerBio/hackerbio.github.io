@@ -4,6 +4,7 @@ date: 2018-07-17 12:00:00 -0400
 headline: Two-times award-winning freelance front-end UI/UX developer, trainer, author and speaker based in Lebanon
 crowdcast: https://www.crowdcast.io/e/hacker-bio-sara-soueidan
 media:
+  duration: "00:48:25"
   soundcloud: 474847284
 ---
 

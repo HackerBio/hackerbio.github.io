@@ -9,6 +9,7 @@ layout: feed
   {% assign html = hacker.content | markdownify %}
   {% assign headline = hacker.headline | markdownify | strip_html | xml_escape %}
   {% assign description = hacker.content | markdownify | strip_html | xml_escape %}
+  {% assign pubDate = hacker.updated | default: hacker.date | date: '%s' %}
   {% capture image %}{{ site.url }}/hackers/{{ slug }}/square.jpg{% endcapture %}
   {% capture media %}http://storage.googleapis.com/hacker-bio/{{ slug }}{% endcapture %}
 
@@ -28,16 +29,17 @@ layout: feed
     <itunes:episodeType>full</itunes:episodeType>
     <itunes:subtitle>{{ headline }}</itunes:subtitle>
     <itunes:summary>{{ description }}</itunes:summary>
-    <itunes:duration>{{ hacker.media.audio.duration }}</itunes:duration>
+    <itunes:duration>{{ hacker.media.duration }}</itunes:duration>
     <itunes:image href="{{ image }}"/>
 
     <media:group>
       <media:title>{{ title }}</media:title>
       <media:description type="html"><![CDATA[{{ html }}]]></media:description>
       <media:thumbnail url="{{ image }}"/>
-      <media:content url="{{ media }}/audio.mp3?pubDate={{ hacker.updated | default: hacker.date | date: '%s' }}" type="audio/mpeg" medium="audio" expression="full" isDefault="false"/>
+      <media:content url="http://feeds.soundcloud.com/stream/{{ hacker.media.soundcloud }}-hackerbio-{{ slug }}.mp3?pubDate={{ pubDate }}" type="audio/mpeg" medium="audio" expression="full" isDefault="false"/>
     </media:group>
 
-    <enclosure url="{{ media }}/audio.mp3?pubDate={{ hacker.updated | default: hacker.date | date: '%s' }}" type="audio/mpeg"/>
+    <!-- <enclosure url="{{ media }}/audio.mp3?pubDate={{ pubDate }}" type="audio/mpeg"/> -->
+    <enclosure url="http://feeds.soundcloud.com/stream/{{ hacker.media.soundcloud }}-hackerbio-{{ slug }}.mp3?pubDate={{ pubDate }}" type="audio/mpeg"/>
   </item>
 {% endfor %}

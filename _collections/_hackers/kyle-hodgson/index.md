@@ -4,6 +4,7 @@ date: 2018-08-08 09:00:00 -0400
 headline: While I love making technology, what gets me out of bed in the morning is helping people accomplish ambitious goals.
 crowdcast: https://www.crowdcast.io/e/hacker-bio-kyle-hodgson
 media:
+  youtube: uA1uuu_DZbE
   audio:
     duration: "00:53:37"
 ---

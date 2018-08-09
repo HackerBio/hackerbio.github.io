@@ -4,8 +4,7 @@ date: 2018-07-04 13:00:00 -0400
 headline: He has been referred to as _"The Godfather of Node.js"_ for his tireless efforts to build community and unite the needs of developers and business leaders
 crowdcast: https://www.crowdcast.io/e/hacker-bio-dan-shaw
 media:
-  audio:
-    duration: "01:06:19"
+  soundcloud: 468426687
   youtube: qZjc9JJRjyM
 ---
 

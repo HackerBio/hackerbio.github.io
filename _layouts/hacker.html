@@ -14,19 +14,26 @@ layout: base
   <div class="my-5 photo">
     <img src="photo.jpg" alt="{{ page.name }}"/>
 
-    {% if page.media.audio.duration %}
+    <!-- {% if page.media.audio.duration %}
       <div class="player">
         <audio crossorigin playsinline>
           <source src="http://storage.googleapis.com/hacker-bio/{{ slug }}/audio.mp3" type="audio/mp3">
         </audio>
       </div>
-    {% endif %}
+    {% endif %} -->
   </div>
+
   <div class="lead">{{ content }}</div>
 </section>
 
+{% if page.media.soundcloud %}
+  <h2 class="my-5">Listen</h2>
+
+  <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ page.media.soundcloud }}&color=%23fcd807&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+{% endif %}
+
 {% if page.media.youtube %}
-  <h2 class="my-5">Watch Recording</h2>
+  <h2 class="my-5">Watch</h2>
 
   <!-- Native Video Player
 	<video controls crossorigin playsinline poster="/hackers/{{ slug }}/youtube.jpg">
@@ -37,14 +44,16 @@ layout: base
   <div id="youtube" class="plyr__video-embed" data-plyr-provider="youtube" data-plyr-embed-id="{{ page.media.youtube }}">
     <iframe src="https://www.youtube.com/embed/{{ page.media.youtube }}?origin=https://{{ site.url }}&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe>
   </div>
-{% elsif page.crowdcast %}
-  <h2 class="my-5">Watch Live Stream</h2>
+{% else %}
+  {% if site.time <= page.date && page.crowdcast %}
+  <h2 class="my-5">Join Live Stream</h2>
 
   <iframe id="crowdcast" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" allowtransparency="true" src="{{ page.crowdcast }}?navlinks=false&embed=true" style="border: 1px solid #EEE;border-radius:3px;" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" allow="microphone; camera;"></iframe>
+  {% endif %}
 {% endif %}
 
 
-<script src="https://unpkg.com/plyr@latest/dist/plyr.min.js"></script>
+<!-- <script src="https://unpkg.com/plyr@latest/dist/plyr.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const publisherId = 891530901789062
@@ -52,4 +61,4 @@ layout: base
     // window.native = new Plyr('video', { enabled: true, publisherId });
     window.youtube = new Plyr('#youtube', { enabled: true, publisherId });
   })
-</script>
+</script> -->

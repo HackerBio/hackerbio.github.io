@@ -6,6 +6,7 @@ crowdcast: https://www.crowdcast.io/e/hacker-bio-matteo-collina
 media:
   duration: "00:48:06"
   soundcloud: 483267528
+  youtube: I8deK6zUE8c
 ---
 
 Matteo is a code pirate and mad scientist. He spends most of his days programming in Node.js, but in the past he worked with Ruby, Java and Objective-C. In 2014, he defended his Ph.D. thesis titled "Application Platforms for the Internet of Things". Now he is a Principal Architect at [nearForm](http://nearform.com), where he consults for the top brands of the world.

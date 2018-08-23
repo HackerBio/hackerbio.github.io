@@ -1,6 +1,6 @@
 ---
 name: Ryan Christiani
-date: 2018-08-13 10:00:00 -0400
+date: 2018-09-13 10:00:00 -0400
 headline: Self taught developer, author and teacher. CTO @ HackerYou.
 crowdcast: https://www.crowdcast.io/e/hacker-bio-ryan-christiani
 ---

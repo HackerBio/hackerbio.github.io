@@ -7,4 +7,4 @@ crowdcast: https://www.crowdcast.io/e/hacker-bio-augusto-rosa
 
 Augusto is a Solution Principal at Slalom Consulting, where I work with clients in Canada and US advising Cloud, DevOps, and Security architectures. Before Slalom, Augusto lead and architected many Digital products and transformations through DevOps and Site Reliability Engineering while working closely with Development, testers and many product teams.
 
-Augusto has a passion for building great teams, and even better architectures. Augusto loves to speak about the tech community and measures himself by how many careers he has been able to help start or grow. 
+Augusto has a passion for building great teams, and even better architectures. Augusto loves to speak about the tech community and measures himself by how many careers he has been able to help start or grow.

@@ -3,6 +3,9 @@ name: Jory Burson
 date: 2018-08-23 10:00:00 -0400
 headline: Jory works on improving collaboration in open source and open standards communities as a member of several industry boards and standards setting organizations.
 crowdcast: https://www.crowdcast.io/e/hacker-bio-jory-burson
+media:
+  duration: "01:00:49"
+  soundcloud: 489861276
 ---
 
 Jory stumbled into web development from humble roots in rural Oklahoma and has never found her way out. She began her career working on an early open source CMS platform for colleges and universities with her friends (and future partner) while at Oklahoma State University. After earning a degree in Journalism and a Master’s degree in Communication, she developed and taught courses about web development and communication for undergraduate Journalism students.

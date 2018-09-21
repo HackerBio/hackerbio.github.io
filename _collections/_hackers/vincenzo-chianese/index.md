@@ -1,6 +1,6 @@
 ---
 name: Vincenzo Chianese
-date: 2018-09-20 10:00:00 -0400
+date: 2018-10-04 11:00:00 -0400
 headline: Vincenzo is a Software Developer focused on WebAPIs and User Interfaces and maintainer of Express Gateway
 crowdcast: https://www.crowdcast.io/e/hacker-bio-vincenzo-chianese
 ---

@@ -1,12 +1,13 @@
 ---
 layout: base
 ---
+{% assign hackers = site.hackers | where: 'draft', false %}
 
 <p class="lead my-5">{{ site.description }}</p>
 <h1 class="mb-5"><span>Hackers</span></h1>
 
 <section class="hackers row">
-  {% for hacker in site.hackers reversed %}
+  {% for hacker in hackers reversed %}
     <article class="col-12 col-md-6 mb-5">
       <div class="wrapper d-flex flex-column justify-content-center">
         <div class="photo"><img src="{{ hacker.id | replace: '/index', '' }}/photo.jpg" alt="{{ hacker.name }}"/></div>
